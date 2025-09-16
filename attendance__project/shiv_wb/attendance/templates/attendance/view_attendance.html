@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Attendance</title>
+    <link rel="stylesheet" type="text/css" href="/static/attendance/style.css">
+</head>
+<body>
+    <h2>My Attendance Records</h2>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record.date }}</td>
+            <td>{{ record.status }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="2">No records found.</td></tr>
+        {% endfor %}
+    </table>
+    <a href="/attendance/mark/">Mark Attendance</a>
+</body>
+</html>
